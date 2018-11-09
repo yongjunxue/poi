@@ -145,6 +145,11 @@ public class ExcelUtil {
 //		export(em,response);
 //	}
 	
+	/**
+	 * 不建议使用这个，一个sheet中的行数大于65535时会报OOM错误，并且xls格式的用微软的办公软件打不开
+	 * @param excel
+	 * @param response
+	 */
 	public static void export(ExcelModel excel,HttpServletResponse response){
 		response.setContentType("application/binary;charset=UTF-8");// new String(filename.getBytes("gbk")
 		String name="";
